@@ -1,10 +1,13 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 const src =
   "C:/Users/User/Downloads/c4f8c4a7-2566-4644-b752-b652e0c103f5.png";
-const out = path.join(process.cwd(), "assets/sponsors/emil-animations-dev.png");
+// Anchor writes to the checkout instead of the caller-controlled working directory.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const out = path.join(root, "assets/sponsors/emil-animations-dev.png");
 
 function isBackground(r, g, b, a, threshold = 22) {
   if (a < 8) return true;

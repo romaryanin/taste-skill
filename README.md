@@ -117,6 +117,10 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 
 You can also copy any `SKILL.md` into your project or paste it into ChatGPT / Codex conversations.
 
+For Codex, review the selected skill and pin the repository revision before
+installation. The plugin does not require running the repository's maintenance
+scripts; see [SECURITY.md](SECURITY.md) for the audit scope and safe-use guidance.
+
 ### Updating from the previous version
 
 The default `taste-skill` (install name `design-taste-frontend`) is now **v2 (experimental)**, a substantial rewrite of the original v1. If you already have v1 installed, just re-run the install command and you will be upgraded:

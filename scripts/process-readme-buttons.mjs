@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 const srcDir = "C:/Users/User/Downloads";
-const outDir = path.join(process.cwd(), "assets/readme-buttons");
+// Anchor writes to the checkout instead of the caller-controlled working directory.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const outDir = path.join(root, "assets/readme-buttons");
 
 const mapping = [
   { src: "ChatGPT Image Jun 17, 2026, 04_04_16 PM (1).png", out: "btn-site.png" },
