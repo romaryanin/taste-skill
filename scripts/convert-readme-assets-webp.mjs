@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-const root = process.cwd();
+// Anchor writes to the checkout instead of the caller-controlled working directory.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const pngToWebp = [
   "assets/readme-banner.png",
